@@ -318,12 +318,13 @@ function __bobthefish_colors -S -a color_scheme -d 'Define colors used by bobthe
       set -x color_nix                      $cyan $colorfg --bold
 
     case 'solarized' 'solarized-dark'
+      set -l base04  a770ef
       set -l base03  002b36
-      set -l base02  073642
+      set -l base02  109595
       set -l base01  586e75
       set -l base00  657b83
-      set -l base0   839496
-      set -l base1   93a1a1
+      set -l base0   c0bdb5
+      set -l base1   d6d3ca
       set -l base2   eee8d5
       set -l base3   fdf6e3
       set -l yellow  b58900
@@ -343,8 +344,10 @@ function __bobthefish_colors -S -a color_scheme -d 'Define colors used by bobthe
 
       set -x color_path                     $base02 $base0
       set -x color_path_basename            $base02 $base1 --bold
-      set -x color_path_nowrite             $base02 $orange
-      set -x color_path_nowrite_basename    $base02 $orange --bold
+      # set -x color_path_nowrite             $base02 $orange
+      set -x color_path_nowrite             $base02 $base2
+      # set -x color_path_nowrite_basename    $base02 $orange --bold
+      set -x color_path_nowrite_basename    $base02 $base3 --bold
 
       set -x color_repo                     $green $colorfg
       set -x color_repo_work_tree           $base02 $colorfg --bold
@@ -357,8 +360,10 @@ function __bobthefish_colors -S -a color_scheme -d 'Define colors used by bobthe
 
       set -x color_vagrant                  $violet $colorfg --bold
       set -x color_k8s                      $green $colorfg --bold
-      set -x color_username                 $base02 $blue --bold
-      set -x color_hostname                 $base02 $blue
+      # set -x color_username                 $base02 $blue --bold
+      set -x color_username                 $base04 $base3 --bold
+      # set -x color_hostname                 $base02 $blue
+      set -x color_hostname                 $base04 $base3
       set -x color_rvm                      $red $colorfg --bold
       set -x color_nvm                      $green $colorfg --bold
       set -x color_virtualfish              $cyan $colorfg --bold
