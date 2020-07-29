@@ -958,15 +958,7 @@ function __bobthefish_prompt_git -S -a git_root_dir -a real_pwd -d 'Display the 
 
     if [ "$theme_git_worktree_support" != 'yes' ]
         set -l project_pwd (__bobthefish_project_pwd $git_root_dir $real_pwd)
-        if [ "$project_pwd" ]
-            if [ -w "$real_pwd" ]
-                __bobthefish_start_segment $color_path
-            else
-                __bobthefish_start_segment $color_path_nowrite
-            end
-
-            echo -ns $project_pwd ' '
-        end
+        __bobthefish_prompt_dir './'$project_pwd' '
         return
     end
 
